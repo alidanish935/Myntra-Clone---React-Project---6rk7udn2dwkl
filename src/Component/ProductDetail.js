@@ -1,77 +1,66 @@
 import React, { useContext, } from 'react'
-import { useParams } from 'react-router-dom'
 import { DataWishlistContext } from '../DataApp'
-import Pdata from '../Movieslist'
 
 const ProductDetail = () => {
     const localContext = useContext(DataWishlistContext)
-    const { setWishlist,wishlist} = localContext
-    const temp = useParams()
-    console.log('tempid- ', temp.id)
-    console.log('typetempid- ', typeof(temp.id))
-
+    const { setWishlist,wishlist ,data,selectedProduct} = localContext
     
-    let val =temp.id;
-    const result = Pdata.filter((item) => {
-        return item.id === parseInt(val)
-    })
-    console.log('result - ', result)
 
-    const res = result.map((obj) => {
-        return obj.size
-    })
-    console.log('catogary- ', res)
-
-    const updateWishlistFn = (id) => {
-        setWishlist(wishlist => [...wishlist,id])
-        console.log(wishlist)
+    const updateWishlistFn = (item) => {
+        setWishlist(wishlist => [...wishlist,item])
     }
+
 
     return (
         <div>
             <div>
                 {
 
-                    result.map((item) => (
+                    // data.otherImages.map((selectedProduct)=> (
                         <div className='flex imageDetailMain'>
                             <div className=' imageTitle'>
 
                                    
-                                <h3>{item.category}</h3>
+                                {/* <h3>{selectedProduct.description}</h3> */}
+                                
 
                                 <div className='flex productDetailImges'>
-                                    <div className='imageDetailInside'><img src={item.imgscr} width='330px' alt='product' /> </div>
-                                    <div className='imageDetailInside'><img src={item.img2} width='330px' alt='product' /> </div>
-                                    <div className='imageDetailInside'><img src={item.img3} width='330px' alt='product' /> </div>
-                                    <div className='imageDetailInside'><img src={item.img4} width='330px' alt='product' /> </div>
+                                    <div className='imageDetailInside'><img src={selectedProduct.otherImages[0]} width='330px' alt='product' /> </div>
+                                    <div className='imageDetailInside'><img src={selectedProduct.otherImages[1]} width='330px' alt='product' /> </div>
+                                    <div className='imageDetailInside'><img src={selectedProduct.otherImages[2]} width='330px' alt='product' /> </div>
+                                    <div className='imageDetailInside'><img src={selectedProduct.otherImages[3]} width='330px' alt='product' /> </div>
                                 </div>
 
 
                             </div>
                             <div className='imageDescription'>
-                                <h2>{item.pname.toUpperCase()} </h2>
-                                <div className='imageDescription_product'>{item.product}</div>
+                                <h2>{selectedProduct.name.toUpperCase()} </h2>
+                                <div className='imageDescription_product'>{selectedProduct.description}</div>
                                 <div className='line'></div>
-                                <p>{item.description}</p>
-                                <h2>{item.price}/-</h2>
-                               <div className='flex  '>
-                                {
-                                    item.size.map((obj)=>(
-                                        <div className='roundDiv flex  items-center justify-center'>{obj}</div>
-                                        
-                                    ))
-                                }
+                                <div className=' flex  '>
+                                            <div>
+                                            < span className='price'>RS. {selectedProduct.finalPrice}&nbsp;&nbsp;</span></div>
+                                            <span className='price strickprice'>{selectedProduct.strickPrice}&nbsp;&nbsp;</span>
+                                            <span className='price discount'> {selectedProduct.discount}% &nbsp;OFF</span>
+                                        </div>
+                                            <div className='tax'> inclusive of all taxes</div>
+                               
+                               <div className=' '>
+                                            <h2>SIZE</h2>
+                                        {/* <div className='roundDiv flex  selectedProductscenter justify-center'>{selectedProduct.productSize}</div> */}
+                                        <div className='productSize'>{selectedProduct.productSize}</div>
+           
                                </div>
                                 <div className='flex '> 
-                                <button className='button' onClick={()=>updateWishlistFn(item)} > Add to wishlist</button>
+                                <button className='button' onClick={(e)=>updateWishlistFn(selectedProduct)} > Add to wishlist</button>
 
-                                {/* <button className='button' onClick={(e) => setWishlist(whishlist => whishlist + 1)} >Add to wishlist</button> */}
-                                <button  className='button'>Buy</button>
+                                {/* <button className='button' onClick={(e) => setWishlist(whishlist => whishlist + 1)} >Add To Cart</button> */}
+                                {/* <button  className='button'>Add To Cart</button> */}
                                 {/* onClick={(e) => setCart(cart => cart + 1)} */}
                                    </div>
                             </div>
                         </div>
-                    ))
+                    // ))
 
                 }
             </div>

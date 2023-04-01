@@ -7,6 +7,8 @@ import ProductDetail from './Component/ProductDetail';
 // import Portal from './Component/portal/Portal';
 import Modal from './Component/portal/Modal';
 import DataApp from './DataApp';
+import Login from './Component/login/Login';
+import Signup from './Component/signup/Signup';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 function App() {
   return (
@@ -17,10 +19,12 @@ function App() {
         <BrowserRouter>
           <Navbar/>
           <Routes>
-              <Route path='/' element={<Home/>} />
+              <Route path='/' element={<Collection/>} />
               <Route path='/collection' element={<Collection/>} />
-              <Route path='/product/:id' element={<ProductDetail/>}/>
+              <Route path='/product' element={<ProductDetail/>}/>
               <Route path='/Modal/:id' element={<Modal/>}/>
+              <Route path='/login' element={<Login/>}/>
+              <Route path='/signup' element={<Signup/>}/>
               
           </Routes>
         </BrowserRouter>

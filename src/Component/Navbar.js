@@ -1,21 +1,18 @@
 import React, { useContext } from 'react'
 import './Navbar.css'
-import Pdata from '../Movieslist'
 import myntra from '../image/myntra.png'
 import { DataWishlistContext } from '../DataApp'
 import Portal from './portal/Portal'
 import { Link } from 'react-router-dom'
 const Navbar = () => {
     const localContext = useContext(DataWishlistContext)
-    const{setsearchData}=localContext
-    console.log(localContext)
+    const{data,setData}=localContext
     const UpdateFn=(e)=>{
         console.log('searchinput - ',e.target.value)
-        const res = Pdata.filter((item)=>{
-            return item.pname.toLowerCase()===e.target.value
+        const res = data.filter((item)=>{
+            return item.name.toLowerCase().includes(e.target.value)
         })
-        setsearchData(res)
-        console.log('searchingFilter - ',res)
+        setData(res)
     }
     return (
         <div className='container'>
@@ -27,8 +24,7 @@ const Navbar = () => {
                         <li>Women</li>
                         <li>Kids</li>
                         <li>Home </li>
-                        <li>Beauty</li>
-                        <li>Studio</li>
+                        
 
                     </ul>
                 </div>
