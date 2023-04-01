@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react'
-import Pdata from '../Movieslist'
+// import Pdata from '../Movieslist'
 import Data from '../Data'
 import { DataWishlistContext } from '../DataApp'
 
