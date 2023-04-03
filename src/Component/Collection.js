@@ -28,26 +28,29 @@ const Collection = () => {
         }
         setData(res ? [...res] : [])
     }
-   
+
     // useEffect(() => {
-       
+
     //     // sortFn()
     // }, [sortBy])
 
     return (
         <div>
             <div>
-                <div className='divider_div'>
-                    <h3>Filter Holder</h3>
-                    <div>
+                <div className='divider_div row'>
+                    <div className='col-9'>
+                        <h3>Filter Holder</h3>
+                    </div>
+                    <div className=' flex col-3 sort-right' >
+                        {/* <label for='select'></label> */}
+                        <div > Sort by :</div>
                         <div className='sort-holder'>
-                            {/* <label for='select'></label> */}
-                            <h3 > Sort by :Recomended</h3>
-                            <select className='select' id='select' onChange={sortFn} defaultValue="latest" >
-                                <option value='latest'>What's New</option>
-                                <option value='price'>Price low to high</option>
-                                <option value='discount'>Better Discount</option>
-                            </select>
+
+                        <select className='select' id='select' onChange={sortFn} defaultValue="latest" >
+                            <option value='latest'>What's New</option>
+                            <option value='price'>Price low to high</option>
+                            <option value='discount'>Better Discount</option>
+                        </select>
                         </div>
                     </div>
                 </div>

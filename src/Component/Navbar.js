@@ -15,15 +15,15 @@ const Navbar = () => {
         setData(res)
     }
     return (
-        <div className='container'>
+        <div className='container1'>
 
             <nav className='flex space-between nav'>
                 <div className='left flex items-center'><Link to='collection' ><img src={myntra} alt="logo" /></Link>
                     <ul className='flex items-center justify-center uppercase semibold'>
-                        <li>Men</li>
+                        {/* <li>Men</li>
                         <li>Women</li>
                         <li>Kids</li>
-                        <li>Home </li>
+                        <li>Home </li> */}
                         
 
                     </ul>

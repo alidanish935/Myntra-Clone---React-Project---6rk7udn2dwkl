@@ -10,6 +10,7 @@ import DataApp from './DataApp';
 import Login from './Component/login/Login';
 import Signup from './Component/signup/Signup';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Checkout from './Component/Checkout';
 function App() {
   return (
     <div >
@@ -25,6 +26,8 @@ function App() {
               <Route path='/Modal/:id' element={<Modal/>}/>
               <Route path='/login' element={<Login/>}/>
               <Route path='/signup' element={<Signup/>}/>
+              <Route path='/checkout' element={<Checkout/>}/>
+
               
           </Routes>
         </BrowserRouter>

@@ -14,7 +14,7 @@ const Portal = () => {
     console.log('status11...',status)
     const wishlistFn = () => {
         if (!loginStatus) {
-            alert('Please login...')
+            alert('🙏Please login...')
             navigate('/login')
         } else {
             if (wishlist.length > 0) {

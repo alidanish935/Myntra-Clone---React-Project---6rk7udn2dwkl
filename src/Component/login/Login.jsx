@@ -31,7 +31,7 @@ const Login = () => {
                 if (temp[i].name === name && temp[i].password === password) {
                     setLoginStatus(true)
                     logstatus = false;
-                    alert("login successful.....")
+                    alert("'Welcome Back😍, LoggIn Successfully'")
                     setUser(name)
                     setAuthentication(true);
                     navigate('/')

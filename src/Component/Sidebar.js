@@ -5,24 +5,24 @@ import { DataWishlistContext } from '../DataApp'
 
 
 const Sidebar = (props) => {
-  const [check,setCheck] = useState(true)
+  const [check, setCheck] = useState(true)
 
   const localContext = useContext(DataWishlistContext)
-  
+
   // const[CheckedBox,setCheckedBox]=useState(false)
 
-  const { data, setData,searchData} = localContext
+  const { data, setData, searchData } = localContext
   console.log('dataVal - ', Data)
 
 
   const UpdateGenderfn = (e) => {
-    if(check){
+    if (check) {
       setCheck(false)
-    }else{
+    } else {
       setCheck(true)
     }
 
-    console.log('gender - ', e.target.value,'typeof',typeof(e.target.value))
+    console.log('gender - ', e.target.value, 'typeof', typeof (e.target.value))
     const result = Data.filter((item) => {
       return item.gender === e.target.value
     })
@@ -62,12 +62,12 @@ const Sidebar = (props) => {
     setData(Data)
   }
   return (
-    <div>
+    <div className='sidebarmain'>
 
 
-      <h4>Gender</h4>
       {/* checked='checked' */}
       <div className='gender' >
+      <h4>Gender</h4>
         <input type="radio" name="gender" onChange={UpdateGenderfn} value="M" checked={check} />
         <label for="gender"> Male  </label> <br />
         <input type="radio" name="gender" onChange={UpdateGenderfn} value="F" />
@@ -77,8 +77,8 @@ const Sidebar = (props) => {
         <input type="radio" name="gender" onChange={UpdateGenderfn} value="girls" />
         <label for="gender"> Girls  </label> <br /> */}
       </div>
-      <h4>Categories</h4>
       <div className='categories'>
+      <h4>Categories</h4>
 
         <input type="checkbox" onChange={CheckboxFn1} id="shirt" name="shirt" value="W" />
         <label for="shirt"> Shirt</label><br />

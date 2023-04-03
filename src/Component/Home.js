@@ -9,7 +9,9 @@ import { Link } from 'react-router-dom'
 
 const Home = () => {
   return (
-    <div>      
+    <div>
+      
+         
         <div>
             <div className='mainDiv flex justify-center '  ><img src={offerimg} className='mainimage' alt='offer'/>
             </div>

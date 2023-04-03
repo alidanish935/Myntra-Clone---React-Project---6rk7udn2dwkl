@@ -1,8 +1,8 @@
 import React, { useContext } from 'react'
 // import ReactDom from 'react-dom'
 import './Modal.css'
-import Pdata from '../../Movieslist'
 import { DataWishlistContext } from '../../DataApp'
+import { Link } from 'react-router-dom'
 
 const Modal = (props) => {
   const localContext = useContext(DataWishlistContext)
@@ -54,7 +54,7 @@ const Modal = (props) => {
             }
           </div>
           <div className='priceDiv' >
-            <h2>PRICE DETAILS ({items} item)</h2>
+            <h5>PRICE DETAILS ({items} item)</h5>
             <div className='flex space-between'>
 
               <div>Total MRP -</div>
@@ -75,7 +75,7 @@ const Modal = (props) => {
               <div>Total Amount -  </div>
               <div>&nbsp;<span>{finalprice}/-</span></div>
             </div>
-        {wishlist.length > 0 && <button className='buttonM' onClick={() => setIsOpen(false)}>Buy</button>}
+            <Link to='/checkout'><button className='buttonM' onClick={() => setIsOpen(false)}>Buy</button></Link>
           </div>
         </div>
       </div>
