@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 // import './L'
 import './Signup.css'
 import { Link, useNavigate } from 'react-router-dom'
+import Myntra from '../../image/Myntra-main.png'
+
 // import linkedInLogo from '../Images/linkedin-logo.png';
 
 
@@ -53,10 +55,12 @@ const Signup = () => {
             <div className='signup_maindiv '>
                 <div className='signup_main '>
                     <div className='signup_logo'>
-                        <img className='loginpage__logo ' src='' width='100px' />
+                        <img className='loginpage__logo ' src={Myntra} width='100px' />
                     </div>
+                    {/* <div className='signInHead'>Sign in</div> */}
+
                     <div className='signup_firsttext'>
-                        Sign up to connect with people.<br />
+                    <p className='stayUpdated'> Get The Best Of Fashion Only On Myntra</p><br />
                     </div>
                     <div className='signup_input'>
                         <input type='text' name='email' className='loginpage__text' onChange={updateFn} placeholder='Email' /><br />

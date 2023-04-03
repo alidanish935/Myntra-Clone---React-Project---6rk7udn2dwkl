@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { DataWishlistContext } from '../../DataApp'
+import Myntra from '../../image/Myntra-main.png'
 
 import './Login.css'
 // import Home from './Home';
@@ -51,15 +52,16 @@ const Login = () => {
             <div className='flex justify-center '>
                 <div className=''>
                     <div className='LoginFormMain'>
+                        <img src={Myntra} width='120px' />
                         <div className='signInHead'>Sign in</div>
-                        <p className='stayUpdated'>Stay updated on your professional world</p>
+                        <p className='stayUpdated'>The difference between style and fashion is quality</p>
                         <input className='loginpage__text' type="text" placeholder='Name ' onChange={e => setName(e.target.value)} /><br></br>
                         <input className='loginpage__text' placeholder='Password must be alpha numric' type="password" onChange={e => setPassword(e.target.value)} /><br></br>
                         <a className='forPass' href="">Forgot password?</a><br></br>
                         <button className='login__button' onClick={LoginFn} >Sign in</button>
                         <div className='login__ordiv '>
                             <div className='login__dividor'></div>
-                            <div className='login__or'>OR</div>
+                            <div className='login__or'></div>
                             <div className='login__dividor'></div>
                         </div>
                     </div>
