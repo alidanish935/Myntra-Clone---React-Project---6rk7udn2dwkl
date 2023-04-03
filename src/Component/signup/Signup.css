@@ -1,5 +1,5 @@
 .signup_maindiv{
-    margin-top: 100px;
+    margin-top: 30px;
     display: flex;
     justify-content: center;
   }
@@ -30,9 +30,9 @@
   .loginpage_login{
     border: 1px solid #DBDBDB;
     margin-top: 2px;
-    width: 344px;
+    width: 329px;
     padding: 8px;
     font-size: 15px;
-    height: 25px;
+    height: 45px;
     
   }
